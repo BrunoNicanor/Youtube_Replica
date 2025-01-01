@@ -6,6 +6,10 @@
     color: white;
 }
 
+body{
+    background-color: #0f0f0f;
+}
+
 /*header*/
 header{
     height: 10vh;
@@ -21,8 +25,65 @@ header{
     width: 20%;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo__hamburger{
+    background-color: gray;
+
+    height: 100%;
+    width: 20%;
+
+}
+
+.logo > section{
+    height: 100%;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo__imagem{
+    height: 100%;
+    width: 30%;
+    background-image: url("/Image/icon/youtube.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.logo__titulo{
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
 .pesquisa{
     width: 50%;
+
+    display: flex;
+}
+
+.pesquisa__textbox{
+    height: 100%;
+    width: 90%;
+
+    margin: 0 auto;
+    padding: 0 1em;
+    gap: 10px;
+
+    border-radius: 50px;
+    border: 1px solid grey;
+}
+
+.pesquisa__audio{
+    height: 100%;
+    width: 8%;
+
+    background-color: gray;
+    border-radius: 50%;
 }
 
 .icones{
