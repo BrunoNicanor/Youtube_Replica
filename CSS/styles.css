@@ -4,6 +4,8 @@
     box-sizing: border-box;
 
     color: white;
+    font-family: "Roboto", "Arial", sans-serif;
+    text-decoration: none;
 }
 
 :root{
@@ -73,7 +75,6 @@ header{
 .logo__titulo{
     font-size: 1em;
     text-transform: uppercase;
-    font-family: "Roboto", "Arial", sans-serif;
     font-weight: 600;
 }
 
@@ -195,16 +196,65 @@ aside{
     height: 10vh;
 
     display: flex;
+
+    gap: 10px;
+    padding: 10px 15px;
 }
 
-.button_icone{
+.button_icone,.navegacao_icone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 20%;
     height: auto;
 }
 
-.button_texto{
+.button_icone img, .navegacao_icone img{
+    height: 70%;
+    object-fit: cover;
+}
+
+.button_texto, .navegacao_texto{
+    display: flex;
+
     width: 80%;
     height: auto;
+
+    align-items: center;
+    font-size: 1em;
+    font-weight: 700;
+}
+.navegacao_texto{
+    width: 20%;
+    margin-left: 10px;
+}
+
+.navegacao_icone{
+    width: 80%;
+    justify-content: flex-start;
+}
+.navegacao_icone img{
+    height: 50%;
+    transform: rotate(270deg);
+}
+
+.rodape1, .rodape1 section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1em;
+}
+
+.rodape1 section{
+    
+}
+
+.rodape1 section a{
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: gray;
 }
 /*fim-aside*/
 /*main*/
