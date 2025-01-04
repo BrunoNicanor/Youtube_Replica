@@ -11,10 +11,16 @@
 :root{
     --cor-principal:#272727;
     --cor-secundaria: #0f0f0f;
+
+    --circulo-tamanho1: 35px;
 }
 
 body{
     background-color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
 }
 
 /*header*/
@@ -25,6 +31,10 @@ header{
     display: flex;
 
     justify-content: space-between;
+
+    position: fixed;
+    
+    background-color: var(--cor-secundaria);
 }
 
 .logo,.pesquisa,.icones{
@@ -182,14 +192,22 @@ header{
     width: 100%;
 
     display: flex;
+    justify-content: flex-end;
+
+    margin-top: 10vh;
 }
 /*fim-painel*/
 /*aside*/
 aside{
     width: 20%;
-    max-height: 90vh;
+    max-height: 100vh;
 
     overflow-y: scroll;
+
+    position: fixed;
+    /* top: 0; */
+    left: 0;
+
 }
 
 .aside_button{
@@ -246,10 +264,6 @@ aside{
     padding: 1em;
 }
 
-.rodape1 section{
-    
-}
-
 .rodape1 section a{
     font-size: 1rem;
     font-weight: 500;
@@ -265,23 +279,41 @@ main{
 
 nav{
     height: 10vh;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-rows: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
     gap: 10px;
 
     padding: 5px;
 }
 
 nav div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: grey;
+
+    height: 100%;
+    padding: 10px;
 
     border-radius: 10px;
 }
 
 #conteudos{
     padding: 10px;
+
+    display: grid;
+    grid-auto-rows: 300px;
+    grid-template-columns: repeat(3,350px);
+
+    gap: 20px;
+
+    /* display: flex; */
+
 }
 
 /*Conteudo*/
@@ -294,18 +326,23 @@ nav div{
 .conteudo__superior{
     height: 66%;
     
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
+
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 10px;
 
+    border-radius: 25px 25px 0 0;
 }
 
 .conteudo__superior__duracao{
     width: 15%;
     height: 15%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /*fim-conteúdo superior*/
 /*conteúdo inferior*/
@@ -315,30 +352,47 @@ nav div{
 
     display: flex;
 
+    padding: 8px;
+    gap: 8px;
 }
 
 .conteudo__inferior__imgCanal{
-    width: 15%;
+    width: var(--circulo-tamanho1);
+    height: var(--circulo-tamanho1);
 
+    border-radius: 50%;
 }
 
 .conteudo__inferior__texto{
-    width: 73%;
+    width: 85%;
 
 }
 
 .conteudo__inferior__texto__titulo{
-    height: 45%;
-
+    height: 55%;
+    font-size: 1.2rem;
 }
 
 .conteudo__inferior__texto__canal{
-    height: 55%;
+    height: 45%;
+    font-size: 0.8rem;
 }
 
 .conteudo__inferior__btnOpcao{
-    width: 12%;
+    width: 5%;
+    height: 100%;
 
+    display: grid;
+    grid-template-columns: 30%;
+    grid-template-rows: repeat(3,5%);
+    justify-content: center;
+
+    gap: 3%;
+}
+
+.conteudo__inferior__btnOpcao div{
+    background-color: white;
+    border-radius: 50%;
 }
 /*fim-conteudo*/
 /*fim-main*/
