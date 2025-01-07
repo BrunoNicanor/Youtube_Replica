@@ -516,9 +516,9 @@ nav div:hover,
 /*fim-Main*/
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1000px){
     #conteudos{
-        grid-template-columns: repeat(2,33%);
+        grid-template-columns: repeat(2,34%);
     }
 }
 
