@@ -240,7 +240,7 @@ aside{
 
 }
 
-.aside_button{
+.aside_button, .aside_button_Titulo{
     height: 10vh;
     min-height: 50px;
     display: flex;
