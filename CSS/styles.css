@@ -559,7 +559,22 @@ nav div:hover,
         min-width: 200px;
     }
     aside{
-        display: none;
+        /* display: none; */
+        width: 100%;
+        
+        overflow: hidden;
+        padding: 0;
+
+        background-color: var(--cinza-principal);
+        flex-direction: row;
+        justify-content: space-evenly;
+        top: 90vh;
+        left: 0;
+    }
+
+    .button_icone{
+        width: var(--circulo-tamanho1);
+        height: var(--circulo-tamanho1);
     }
     main{
         width: 100%;

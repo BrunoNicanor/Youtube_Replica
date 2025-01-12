@@ -247,6 +247,5 @@ for (let index = 0; index < listaAsideButton.length; index++) {
     <div class="button_texto">
         <p>${listaAsideButton[index].titulo}</p>
     </div>
-`;
-    
+`;   
 }
