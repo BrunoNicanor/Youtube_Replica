@@ -249,3 +249,35 @@ for (let index = 0; index < listaAsideButton.length; index++) {
     </div>
 `;   
 }
+
+//Testando
+let test = document.querySelectorAll('aside > .aside_button');
+let novaListaAside = [{
+    imagem: '/Image/icon/foto.jpg',
+    titulo: 'Você'
+}];
+
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 700){
+        test[4].innerHTML = `
+        <div class="button_icone">
+            <img src="${novaListaAside[0].imagem}" alt="">
+        </div>
+        <div class="button_texto">
+            <p>${novaListaAside[0].titulo}</p>
+        </div>`;
+    }else{
+        test[4].innerHTML = `
+    <div class="button_icone">
+        <img src="${listaAsideButton[10].imagem}" alt="">
+    </div>
+    <div class="button_texto">
+        <p>${listaAsideButton[10].titulo}</p>
+    </div>
+`
+    }
+});
+
+
+console.log(test);
