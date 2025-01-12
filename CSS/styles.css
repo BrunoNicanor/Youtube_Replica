@@ -565,7 +565,9 @@ nav div:hover,
         overflow: hidden;
         padding: 0;
 
-        background-color: var(--cinza-principal);
+        border-top: 2px solid var(--cinza-principal);
+        background-color: var(--preto-secundaria);
+        
         flex-direction: row;
         justify-content: space-evenly;
         top: 90vh;
