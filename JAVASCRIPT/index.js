@@ -1,3 +1,6 @@
+//Nav
+let icones = document.querySelectorAll('.icones img');
+
 //Conteúdos
 let listaConteudos = [
     {
@@ -212,7 +215,6 @@ for (let index = 0; index < listaTextoNavegacao.length; index++) {
 }
 
 //Aside
-
 //Pegando largura da tela
 let larguraTela = window.innerWidth;
 //let larguraTela = window.innerWidth;
@@ -232,27 +234,39 @@ let listaAsideButtonDesktop = [
 //Criando lista auxiliar para escolha
 let listaEscolha = [];
 
-window.addEventListener('load', (event) =>{
-    verificaTelaImprime(event)
+window.addEventListener('load', () =>{
+    verificaTelaImprime();
 });
 
-window.addEventListener('resize',  (event) =>{
-    verificaTelaImprime(event)
+window.addEventListener('resize',  () =>{
+    verificaTelaImprime()
 });
-
 
 //Fazendo verificação de tamanho de tela
 const asideButton = document.querySelectorAll('.aside_button');
 
 //Criando função para verificar tamanho de tela e selecionar lista
-function verificaTelaImprime(event){
-    if (event.target.innerWidth <= 700){
+function verificaTelaImprime(){
+    let larguraAtual = window.innerWidth;
+    //Nav Icones
+    
+    //Aside
+    if (larguraAtual <= 700){
+        //Pesquisa Icones
+        icones[0].src = "/Image/icon/transmitir.png"
+        icones[2].src = "/Image/icon/lupa.png"
+        //Aside
         listaEscolha = listaAsideButtonMobile;
     }else{
+        //Pesquisa Icones
+        icones[0].src = "/Image/icon/upload.png"
+        icones[2].src = "/Image/icon/foto.jpg"
+        //Aside
         listaEscolha = listaAsideButtonDesktop;
     }
 
     imprimindoAsideButton();
+
 }
 //Criando função para imprimir os elementos de Aside
 function imprimindoAsideButton(){
