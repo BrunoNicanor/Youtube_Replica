@@ -236,8 +236,6 @@ aside{
 
     display: flex;
     flex-direction: column;
-    
-
 }
 
 .aside_button, .aside_button_Titulo{
@@ -481,7 +479,7 @@ nav div:hover,
 
     aside{
         height: 100%;
-        min-height: 500px;
+        /* min-height: 500px; */
         width: 10%;
         min-width: 100px;
         justify-content: space-evenly;
@@ -561,7 +559,7 @@ nav div:hover,
     aside{
         /* display: none; */
         width: 100%;
-        
+        height: 12vh;
         overflow: hidden;
         padding: 0;
 
@@ -569,9 +567,44 @@ nav div:hover,
         background-color: var(--preto-secundaria);
         
         flex-direction: row;
+        align-items: center;
         justify-content: space-evenly;
-        top: 90vh;
+        /* top: 90vh; */
+        bottom: 0;
         left: 0;
+    }
+
+    .aside_button{
+        width: 65px;
+        height: 65px;
+    }
+
+    .aside_button:nth-child(3){
+        /* height: 50px;
+        width: 50px; */
+
+        background-color: var(--cinza-principal);
+        justify-content: center;
+        gap: 0;
+        
+        border-radius: 50%;
+
+        margin-top: 5px;
+    }
+
+    .aside_button:nth-child(3) > 
+    .button_texto {
+        display: none;
+    }
+    .aside_button:nth-child(3) > 
+    .button_icone {
+        width: 100%;
+        height: 100%;
+    }
+
+    #modific .button_icone img{
+        object-fit: cover;
+        border-radius: 50%;
     }
 
     .button_icone{
