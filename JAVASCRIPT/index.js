@@ -212,72 +212,88 @@ for (let index = 0; index < listaTextoNavegacao.length; index++) {
 }
 
 //Aside
-let listaAsideButton = [
-    { imagem: "/Image/icon/home.png", titulo: "Início" },
-    { imagem: "/Image/icon/shorts.png", titulo: "Shorts" },
-    { imagem: "/Image/icon/Inscricao.png", titulo: "Inscrições" },
-    { imagem: "/Image/icon/music.png", titulo: "Youtube Music" },
-    { imagem: "/Image/icon/historico.png", titulo: "Histórico" },
-    { imagem: "/Image/icon/playlist.png", titulo: "Playlist" },
-    { imagem: "/Image/icon/seusvideos.png", titulo: "Seus vídeos" },
-    { imagem: "/Image/icon/seusfilmes.png", titulo: "Seus Filmes" },
-    { imagem: "/Image/icon/MaisTarde.png", titulo: "Assistir mais tarde" },
-    { imagem: "/Image/icon/Gostei.png", titulo: "Vídeos com Gostei" },
-    { imagem: "/Image/icon/download.png", titulo: "Downloads" },
-    { imagem: "/Image/icon/clipes.png", titulo: "Seus clipes" },
-    { imagem: "/Image/icon/Studio.png", titulo: "Youtube Studio" },
-    { imagem: "/Image/icon/Youtube_Music.png", titulo: "Youtube Music" },
-    { imagem: "/Image/icon/Kids.png", titulo: "Youtube Kids" },
-    { imagem: "/Image/icon/config.png", titulo: "Configurações" },
-    { imagem: "/Image/icon/Flag.png", titulo: "Histórico de denu" },
-    { imagem: "/Image/icon/ajuda.png", titulo: "Ajuda" },
-    { imagem: "/Image/icon/feedback.png", titulo: "Enviar Feedback" }
+
+//Pegando largura da tela
+let larguraTela = window.innerWidth;
+//let larguraTela = window.innerWidth;
+
+//Criando sub-lista para conteúdo mobile
+let listaAsideButtonMobile = [
+    {imagem: "/Image/icon/mais.png", titulo: ""},
+    {imagem: "/Image/icon/Inscricao.png", titulo: "Inscrições"},
+    {imagem: "/Image/icon/foto.jpg", titulo: "Você"}
 ];
+//Criando lista para conteúdo desktop
+let listaAsideButtonDesktop = [
+    {imagem: "/Image/icon/Inscricao.png", titulo: "Inscrições"},
+    {imagem: "/Image/icon/music.png", titulo: "Youtube Music"},
+    {imagem: "/Image/icon/download.png", titulo: "Downloads"}
+];
+//Criando lista auxiliar para escolha
+let listaEscolha = [];
 
-const asideButton = document.querySelectorAll('.aside_button');
+window.addEventListener('load', (event) =>{
+    verificaTelaImprime(event)
+});
 
-for (let index = 0; index < listaAsideButton.length; index++) {
-
-    let novoDivAside = asideButton[index];
-
-    novoDivAside.innerHTML = `
-    <div class="button_icone">
-        <img src="${listaAsideButton[index].imagem}" alt="">
-    </div>
-    <div class="button_texto">
-        <p>${listaAsideButton[index].titulo}</p>
-    </div>
-`;   
-}
-
-//Testando
-let test = document.querySelectorAll('aside > .aside_button');
-let novaListaAside = [{
-    imagem: '/Image/icon/foto.jpg',
-    titulo: 'Você'
-}];
-
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 700){
-        test[4].innerHTML = `
-        <div class="button_icone">
-            <img src="${novaListaAside[0].imagem}" alt="">
-        </div>
-        <div class="button_texto">
-            <p>${novaListaAside[0].titulo}</p>
-        </div>`;
-    }else{
-        test[4].innerHTML = `
-    <div class="button_icone">
-        <img src="${listaAsideButton[10].imagem}" alt="">
-    </div>
-    <div class="button_texto">
-        <p>${listaAsideButton[10].titulo}</p>
-    </div>
-`
-    }
+window.addEventListener('resize',  (event) =>{
+    verificaTelaImprime(event)
 });
 
 
-console.log(test);
+//Fazendo verificação de tamanho de tela
+const asideButton = document.querySelectorAll('.aside_button');
+
+//Criando função para verificar tamanho de tela e selecionar lista
+function verificaTelaImprime(event){
+    if (event.target.innerWidth <= 700){
+        listaEscolha = listaAsideButtonMobile;
+    }else{
+        listaEscolha = listaAsideButtonDesktop;
+    }
+
+    imprimindoAsideButton();
+}
+//Criando função para imprimir os elementos de Aside
+function imprimindoAsideButton(){
+
+    //Elementos Aside Desktop
+    let listaAsideButton = [
+        { imagem: "/Image/icon/home.png", titulo: "Início" },
+        { imagem: "/Image/icon/shorts.png", titulo: "Shorts" },
+        { imagem: listaEscolha[0].imagem, titulo: listaEscolha[0].titulo},
+        //{ imagem: "/Image/icon/Inscricao.png", titulo: "Inscrições" },
+        { imagem: listaEscolha[1].imagem, titulo: listaEscolha[1].titulo},
+        //{ imagem: "/Image/icon/music.png", titulo: "Youtube Music" },
+        { imagem: "/Image/icon/historico.png", titulo: "Histórico" },
+        { imagem: "/Image/icon/playlist.png", titulo: "Playlist" },
+        { imagem: "/Image/icon/seusvideos.png", titulo: "Seus vídeos" },
+        { imagem: "/Image/icon/seusfilmes.png", titulo: "Seus Filmes" },
+        { imagem: "/Image/icon/MaisTarde.png", titulo: "Assistir mais tarde" },
+        { imagem: "/Image/icon/Gostei.png", titulo: "Vídeos com Gostei" },
+        { imagem: listaEscolha[2].imagem, titulo: listaEscolha[2].titulo},
+        //{ imagem: "/Image/icon/download.png", titulo: "Downloads" },
+        { imagem: "/Image/icon/clipes.png", titulo: "Seus clipes" },
+        { imagem: "/Image/icon/Studio.png", titulo: "Youtube Studio" },
+        { imagem: "/Image/icon/Youtube_Music.png", titulo: "Youtube Music" },
+        { imagem: "/Image/icon/Kids.png", titulo: "Youtube Kids" },
+        { imagem: "/Image/icon/config.png", titulo: "Configurações" },
+        { imagem: "/Image/icon/Flag.png", titulo: "Histórico de denu" },
+        { imagem: "/Image/icon/ajuda.png", titulo: "Ajuda" },
+        { imagem: "/Image/icon/feedback.png", titulo: "Enviar Feedback" }
+    ];
+    
+    for (let index = 0; index < listaAsideButton.length; index++) {
+
+        let novoDivAside = asideButton[index];
+    
+        novoDivAside.innerHTML = `
+        <div class="button_icone">
+            <img src="${listaAsideButton[index].imagem}" alt="">
+        </div>
+        <div class="button_texto">
+            <p>${listaAsideButton[index].titulo}</p>
+        </div>
+    `;   
+    }
+}
