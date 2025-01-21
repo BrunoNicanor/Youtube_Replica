@@ -542,15 +542,22 @@ nav div:hover,
         display: none;
     }
 
-    .pesquisa__audio img:nth-child(1){
+    /* .pesquisa__audio img:nth-child(1){
         display: none;
     }
     .pesquisa__audio img:nth-child(2){
         display: block;
+    } */
+
+    .pesquisa__audio{
+        display: none;
     }
 
     .icones{
-        display: none;
+        width: 35%;
+
+        padding: 0;
+        justify-content: space-between;
     }
 
     #painel{
