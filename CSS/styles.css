@@ -521,6 +521,9 @@ nav div:hover,
 }
 
 @media (max-width: 700px){
+    :root{
+        --circulo-tamanho1: 25px;
+    }
     header{
         justify-content: space-between;
 
@@ -554,10 +557,9 @@ nav div:hover,
     }
 
     .icones{
-        width: 35%;
-
+        justify-content: flex-end;
         padding: 0;
-        justify-content: space-between;
+        gap: 15px;
     }
 
     #painel{
@@ -566,7 +568,7 @@ nav div:hover,
     aside{
         /* display: none; */
         width: 100%;
-        height: 12vh;
+        height: 8vh;
         overflow: hidden;
         padding: 0;
 
@@ -582,8 +584,8 @@ nav div:hover,
     }
 
     .aside_button{
-        width: 65px;
-        height: 65px;
+        width: 50px;
+        height: 50px;
     }
 
     .aside_button:nth-child(3){
@@ -618,6 +620,16 @@ nav div:hover,
         width: var(--circulo-tamanho1);
         height: var(--circulo-tamanho1);
     }
+
+    .button_texto{
+        font-size: 0.7em;
+    }
+
+    #mais img{
+        width: var(--circulo-tamanho1);
+        height: var(--circulo-tamanho1);
+    }
+
     main{
         width: 100%;
     }
